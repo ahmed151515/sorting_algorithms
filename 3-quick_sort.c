@@ -39,23 +39,23 @@ int partition(int *arr, int low, int high, int size)
 	swap(&arr[i + 1], &arr[high]);
 	print_array(arr, size);
 
-	return i + 1;
+	return (i + 1);
 }
 /**
- * quick_sort_recursive - quick_sort_recursive
+ * recursive - recursive
  * @array: array
  * @low: low
  * @high: high
  * @size: size
  */
-void quick_sort_recursive(int *array, int low, int high, int size)
+void recursive(int *array, int low, int high, int size)
 {
 	if (low < high)
 	{
 		int p = partition(array, low, high, size);
 
-		quick_sort_recursive(array, low, p - 1, size);
-		quick_sort_recursive(array, p + 1, high, size);
+		recursive(array, low, p - 1, size);
+		recursive(array, p + 1, high, size);
 	}
 }
 /**
